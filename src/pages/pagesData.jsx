@@ -1,5 +1,5 @@
 import AuthMiddleware from "../features/authMiddleware";
-import LoginPage from "./login";
+import LoginPage from "./Login";
 import HomePage from "./Welcome";
 
 const pagesData = [
