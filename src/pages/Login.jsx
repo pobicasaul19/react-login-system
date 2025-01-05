@@ -27,7 +27,7 @@ const Login = () => {
       toast.success('Login Successful!');
       navigate('/')
     } else {
-      toast.error(errorMessage);
+      toast.error('Authentication failed.');
     }
   };
 
@@ -46,7 +46,6 @@ const Login = () => {
           placeholder="Username"
           className="w-full p-2 rounded-xl border border-gray-700 bg-transparent focus:border-gray-300 focus:outline-none"
         />
-        {!form.username && <p className="text-red-600 text-xs text-start">Username is required</p>}
         <input
           type="password"
           name="password"
@@ -55,7 +54,7 @@ const Login = () => {
           placeholder="Password"
           className="w-full p-2 rounded-xl border border-gray-700 bg-transparent focus:border-gray-300 focus:outline-none"
         />
-        {!form.password && <p className="text-red-600 text-xs text-start">Password is required</p>}
+        {errorMessage && <p className="text-red-600 text-xs text-start">{errorMessage}</p>}
         <button
           type="submit"
           className="w-1/2 bg-blue-500 text-white py-2 rounded-full hover:bg-blue-600"
